@@ -1,0 +1,101 @@
+/* src/components/Navbar/Navbar.module.css */
+.navbar {
+  --nav-bg: linear-gradient(135deg, #ab886d 0%, #9a755a 100%);
+  --text-primary: #2d3748;
+  --text-secondary: #f8fafc;
+  --nav-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  --nav-border: 1px solid rgba(255, 255, 255, 0.1);
+  
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  backdrop-filter: blur(8px);
+  background: var(--nav-bg);
+  box-shadow: var(--nav-shadow);
+  border-bottom: var(--nav-border);
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between; /* This pushes logo left and links right */
+  align-items: center;
+  /* max-width: 1440px; */
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--text-primary);
+  transition: transform 0.3s ease;
+}
+
+.logoHighlight {
+  color: var(--text-secondary);
+  position: relative;
+}
+
+.logoHighlight::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--text-secondary);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.logo:hover .logoHighlight::after {
+  transform: scaleX(1);
+}
+
+.navLinks {
+  display: flex;
+  gap: 1.5rem;
+  margin-left: auto; /* Ensures links stay right-aligned */
+}
+
+/* Keep the rest of your existing button styles */
+.navButton {
+  padding: 0.75rem 1.75rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navContainer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .navLinks {
+    justify-content: flex-end; /* Right-align on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .navLinks {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .navButton {
+    width: 100%;
+    text-align: center;
+  }
+}

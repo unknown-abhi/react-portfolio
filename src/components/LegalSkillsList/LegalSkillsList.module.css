@@ -1,0 +1,259 @@
+/* LegalSkillsList.module.css */
+
+.legalServices {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f8fafc;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #2a3b4d;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  color: #667085;
+  font-size: 1.1rem;
+  font-weight: 500;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.serviceCard {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid #e2e8f0;
+}
+
+.serviceCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.cardHeader {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.serviceNumber {
+  position: absolute;
+  right: 0;
+  top: -1rem;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #f0f2f5;
+  z-index: 0;
+  line-height: 1;
+}
+
+.serviceTitle {
+  font-size: 1.4rem;
+  color: #2a3b4d;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+  line-height: 1.4;
+}
+
+.pricingSection {
+  background: #f8fafc;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  border: 1px solid #e2e8f0;
+}
+
+.priceItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.priceItem:last-child {
+  border-bottom: none;
+}
+
+.priceIcon {
+  font-size: 1.5rem;
+  color: #d53f8c;
+  flex-shrink: 0;
+  background: rgba(213, 63, 140, 0.1);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.currency {
+  color: #667085;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.amount {
+  color: #2a3b4d;
+  font-weight: 700;
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.rate {
+  color: #667085;
+  font-size: 0.95rem;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.collapsibleContent {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.collapsibleContent.expanded {
+  max-height: 1000px;
+}
+
+.serviceList {
+  display: grid;
+  gap: 1rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.listItem {
+  color: #475467;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.listItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 8px;
+  height: 8px;
+  background: #d53f8c;
+  border-radius: 50%;
+}
+
+.readMoreBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 1rem 1.5rem;
+  background: rgba(213, 63, 140, 0.1);
+  border: none;
+  border-radius: 0.75rem;
+  color: #d53f8c;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  justify-content: center;
+}
+
+.readMoreBtn:hover {
+  background: rgba(213, 63, 140, 0.15);
+  transform: translateY(-2px);
+}
+
+.readMoreBtn:active {
+  transform: translateY(0);
+}
+
+.icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .legalServices {
+    padding: 3rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .serviceCard {
+    padding: 1.5rem;
+  }
+
+  .serviceNumber {
+    font-size: 3rem;
+  }
+
+  .priceItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem 0;
+  }
+
+  .priceIcon {
+    font-size: 1.3rem;
+  }
+
+  .readMoreBtn {
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .legalServices {
+    padding: 2rem 1rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .serviceTitle {
+    font-size: 1.25rem;
+  }
+
+  .amount {
+    font-size: 1.1rem;
+  }
+
+  .listItem {
+    font-size: 0.95rem;
+  }
+}
